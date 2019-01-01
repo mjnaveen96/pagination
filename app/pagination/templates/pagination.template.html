@@ -1,0 +1,52 @@
+
+	<div class="pagination_footer">
+		<div align="center" class="navigation">
+			<span><b>Number of Items Per Page :</b></span>
+			<span>
+				<input type="number"
+					    ng-model="itemsPerPage"
+						class="navigation_input"
+						only-digit>
+			</span>
+		</div>
+		<div align="center" class="navigation">
+			<span><b>Jump To :</b></span>
+			<span>
+				<input type="number"
+						ng-model="currentPage"
+						class="navigation_input"
+						only-digit>
+			</span>
+			<span>of {{totalPages}}</span>
+		</div>
+		<div align="center" class="navigation">
+			<span
+				class="pagenumber navbuttons"
+				ng-click="getPrevPage()"
+				title="Previous"><b>&#8810;</b>
+			</span>
+			<span
+				ng-if="pageNumberArray[0] >= 2"
+				ng-click="getPage(1)"
+				class="pagenumber">1
+			</span>
+			<span ng-if="pageNumberArray[0] > 2">.....</span>
+			<span
+				ng-repeat="page in pageNumberArray track by $index"
+				ng-click="getPage(page)"
+				class="pagenumber"
+				ng-class="{active: page === onPage}">{{page}}
+			</span>
+			<span ng-if="pageNumberArray[pageNumberArray.length-1] < totalPages - 1">.....</span>
+			<span
+				ng-if="pageNumberArray[pageNumberArray.length-1] <= totalPages - 1"
+				ng-click="getPage(totalPages)"
+				class="pagenumber">{{totalPages}}
+
+			</span>
+			<span
+				class="pagenumber navbuttons"
+				ng-click="getNextPage()"
+				title="Next"><b>&#8811;</b></span>
+		</div>
+	</div>

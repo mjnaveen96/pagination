@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagination</title>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body ng-app="myApp">
+	<main ng-controller="mainController as mainCtrl">
+		<div class="pagination_header">
+			<div class="tabletitle" align="center">
+				<h2>Tabular Data!</h2>
+			</div>
+			<!-- <table class="paginationtable">
+				<tr>
+					<th>Number</th>
+					<th>Question</th>
+					<th>Answer</th>
+				</tr>
+				<tr ng-repeat="item in mainCtrl.tableData track by $index" class="tablerow">
+					<td align="center">{{item.id}}.</td>
+					<td>{{item.question}}</td>
+					<td>{{item.correct_answer}}</td>
+				</tr>
+			</table> -->
+			<div class="" ng-repeat="item in mainCtrl.tableData track by $index">
+				<ul>{{item.id}}.
+					{{item.question}}
+					<li>{{item.correct_answer}}</li>
+				</ul>
+			</div>
+		</div>
+		<section ng-controller="paginationController as pageCtrl">
+			<!-- your custom directive goes here -->
+			<fs-myapp-pagination config="mainCtrl.dataList.length" id="myappPagination1"></fs-myapp-pagination>
+		</section>
+	</main>
+	<script type="text/javascript" src="app/app.js"></script>
+	<!-- <script type="text/javascript" src="app/app.fetchData.service.js"></script> -->
+	<script type="text/javascript" src="app/app.controller.js"></script>
+	<script type="text/javascript" src="app/pagination/services/pagination.service.js"></script>
+	<script type="text/javascript" src="app/pagination/services/pagination.validation.service.js"></script>
+	<script type="text/javascript" src="app/pagination/controllers/pagination.controller.js"></script>
+	<script type="text/javascript" src="app/pagination/directives/pagination.input.directive.js"></script>
+	<script type="text/javascript" src="app/pagination/directives/pagination.directive.js"></script>
+	<script type="text/javascript"></script>
+</body>
+</html>

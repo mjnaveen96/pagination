@@ -1,0 +1,61 @@
+/*try css BEM convention*/
+.paginationtable{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.paginationtable td, .paginationtable th{
+	border: 1px solid #cccccc;
+}
+.paginationtable th{
+	background-color: #0066ff;
+	padding: 12px;
+	color: #ffffff;
+}
+.pagenumber{
+	margin: 2px;
+	font-size: 20px;
+	cursor: pointer;
+}
+.active{
+	display: inline-block;
+	height: 2%;
+	width: 2%;
+	border-radius: 50%;
+	color: #ffffff;
+	background-color: #ff6600;
+}
+.tablerow:hover{
+	cursor: pointer;
+	background-color: #cccccc;
+}
+
+.navbuttons{
+	display: inline-block;
+	color: #ff6600;
+	font-weight: bolder;
+}
+
+.navigation{
+	margin: 10px;
+}
+
+.navigation_input{
+	display: inline-block;
+	width: 40px;
+	height: 25px;
+	border: 1px solid #cccccc;
+	text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
